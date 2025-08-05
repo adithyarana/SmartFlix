@@ -1,22 +1,57 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { CheckValidation } from "../utils/Validate.jsx";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth, provider } from "../utils/firebase.jsx";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [issigninform, setissigninform] = useState(true);
-  const [errormessage , seterrormessage] = useState(null);
+  const [errormessage, seterrormessage] = useState(null);
 
   const email = useRef(null);
   const password = useRef(null);
+  const navigate = useNavigate();
 
   const toggleform = () => {
     setissigninform(!issigninform);
   };
 
-  const handleError = () => {
+  const handleEmailPasswordSignIn = () => {
     // validate form data
-    const errormessage = CheckValidation(email.current.value , password.current.value)
-        seterrormessage(errormessage)
+    const errormessage = CheckValidation(
+      email.current.value,
+      password.current.value
+    );
+    seterrormessage(errormessage);
+
+    if (!errormessage) {
+      if (!issigninform) {
+        // logic for signup form
+      } else {
+        // Logic for sign in form
+      }
+    }
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        console.log("user data ", user);
+        
+        // Auth state change is handled by onAuthStateChanged in App.jsx
+        navigate("/browse");
+        toast.success("Sign In Successful");
+      })
+      .catch((error) => {
+        console.log("Error in Google Sign Up", error);
+        seterrormessage(error.message);
+        toast.error(error.message)
+      });
   };
 
   return (
@@ -38,7 +73,12 @@ const Login = () => {
           <h1 className="text-white text-2xl font-bold drop-shadow-md">
             {issigninform ? "Sign In" : "Sign Up"}
           </h1>
-
+          <button
+            onClick={handleGoogleSignIn}
+            className="bg-red-600 hover:bg-red-700 text-white py-2 rounded cursor-pointer"
+          >
+            Sign In with Google
+          </button>
           {!issigninform && (
             <input
               className="p-2 rounded bg-gray-800 text-white placeholder-gray-400"
@@ -53,7 +93,6 @@ const Login = () => {
             type="text"
             placeholder="Email"
           />
-         
 
           <input
             ref={password}
@@ -62,10 +101,10 @@ const Login = () => {
             placeholder="Password"
           />
 
-          <p className="text-red-600 text-sm">{errormessage}</p> 
+          <p className="text-red-600 text-sm">{errormessage}</p>
 
           <button
-            onClick={handleError}
+            onClick={handleEmailPasswordSignIn}
             className="bg-red-600 hover:bg-red-700 text-white py-2 rounded cursor-pointer"
           >
             {issigninform ? "Sign In" : "Sign Up"}
