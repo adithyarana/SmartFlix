@@ -4,21 +4,14 @@ import useNowplayingMovies from "../Hooks/useNowplayingMovies";
 import Maincontainer from "./Maincontainer";
 import Secondarycontainer from "./Secondarycontainer";
 import Header from "./Header";
+import usePopularmovies from "../Hooks/usePopularmovies";
 
 const Browse = () => {
   useNowplayingMovies();
+  usePopularmovies();
 
-  return (
-    <div className="">
-      <Header />
-      <div className="pt-3">
-      <Header2 />
-      </div>
-      <div className="p-4 bg-black">
-        <Maincontainer />
-        {/* <Secondarycontainer /> */}
-      </div>
-      {/*
+  {
+    /*
       maincontainer:
          vediobackgrond
          vediotitle
@@ -26,7 +19,19 @@ const Browse = () => {
       secondarycintainer:
         movies list differbt types
         in movies list movies card
-      */}
+      */
+  }
+
+  return (
+    <div className="h-screen w-screen  ">
+      <Header />
+      <div className="pt-3">
+        <Header2 />
+      </div>
+      <div className="">
+        <Maincontainer />
+        <Secondarycontainer />
+      </div>
     </div>
   );
 };

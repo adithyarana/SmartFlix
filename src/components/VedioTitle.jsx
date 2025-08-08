@@ -6,13 +6,8 @@ const VedioTitle = ({moviedata}) => {
 
     const {original_title , overview} = moviedata;
 
-
-   
-    
-    
-    
   return (
-    <div className="flex h-screen  aspect-video flex-col gap-6  absolute bottom-4 pt-96 left-20 ">
+    <div className="flex h-screen  aspect-video flex-col gap-6  absolute bottom-4 pt-60 left-20 ">
 
         <div className='flex flex-col gap-2'>
         <h1 className='text-5xl font-bold drop-shadow-md text-white'>{original_title}</h1>

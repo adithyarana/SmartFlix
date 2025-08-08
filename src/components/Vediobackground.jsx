@@ -17,7 +17,7 @@ const Vediobackground = ({ movieid }) => {
     <div className="relative w-full h-screen overflow-hidden">
 
     <iframe
-      className="absolute top-0 left-0 w-full h-full object-cover"
+      className="absolute top-0 left-0 w-screen h-screen object-cover"
       src={Trailerurl}
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

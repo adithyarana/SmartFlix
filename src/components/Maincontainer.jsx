@@ -4,20 +4,17 @@ import Vediobackground from './Vediobackground';
 import VedioTitle from './VedioTitle';
 
 const Maincontainer = () => {
+  const movies = useSelector((state) => state.movies?.nowPlayingMovies);
 
-    const movies = useSelector((state)=>state.movies?.nowPlayingMovies);
+  if (!movies) return null;
+  const Onemovie = movies[3];
 
-    if(movies == null) return;
-    const Onemovie= movies[0];
-    
-    
-    
   return (
-    <div>
-        <Vediobackground movieid={Onemovie}/>
-        <VedioTitle moviedata ={Onemovie}/>
+    <div className="">
+      <Vediobackground movieid={Onemovie} />
+      <VedioTitle moviedata={Onemovie} />
     </div>
-  )
-}
+  );
+};
 
-export default Maincontainer
+export default Maincontainer;
