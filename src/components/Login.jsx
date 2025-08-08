@@ -3,8 +3,8 @@ import Header from "./Header";
 import { CheckValidation } from "../utils/Validate.jsx";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth, provider } from "../utils/firebase.jsx";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { bannerimage } from "../utils/Constants.jsx";
 
 const Login = () => {
   const [issigninform, setissigninform] = useState(true);
@@ -12,7 +12,6 @@ const Login = () => {
 
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate();
 
   const toggleform = () => {
     setissigninform(!issigninform);
@@ -44,7 +43,6 @@ const Login = () => {
         console.log("user data ", user);
         
         // Auth state change is handled by onAuthStateChanged in App.jsx
-        navigate("/browse");
         toast.success("Sign In Successful");
       })
       .catch((error) => {
@@ -55,12 +53,12 @@ const Login = () => {
   };
 
   return (
-    <div className="relative h-screen w-screen">
+    <div className="relative h-screen w-screen opacity-95">
       <Header />
       {/* Background Image */}
       <img
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/258d0f77-2241-4282-b613-8354a7675d1a/web/IN-en-20250721-TRIFECTA-perspective_cadc8408-df6e-4313-a05d-daa9dcac139f_medium.jpg"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-50 -z-10"
+        src={bannerimage}
         alt="banner"
       />
 
