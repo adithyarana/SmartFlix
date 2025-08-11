@@ -6,10 +6,15 @@ import Secondarycontainer from "./Secondarycontainer";
 import Header from "./Header";
 import usePopularmovies from "../Hooks/usePopularmovies";
 import useTopRated from "../Hooks/useTopRated";
+import Aisearchcontainer from "./Aisearchcontainer";
+import { useSelector } from "react-redux";
 
 const Browse = () => {
+  const aisearch = useSelector((store) => store.ai.showaisearch);
+  console.log(aisearch);
 
-  // Api calls using custom hooks 
+
+  // Api calls using custom hooks
   useNowplayingMovies();
   usePopularmovies();
   useTopRated();
@@ -27,14 +32,19 @@ const Browse = () => {
   }
 
   return (
-    <div className="h-screen w-screen  ">
+    <div className="">
       <Header />
       <div className="pt-3">
         <Header2 />
-      </div>
-      <div className="">
-        <Maincontainer />
-        <Secondarycontainer />
+
+        {aisearch ? (
+          <Aisearchcontainer />
+        ) : (
+          <>
+            <Maincontainer />
+            <Secondarycontainer />
+          </>
+        )}
       </div>
     </div>
   );

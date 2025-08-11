@@ -10,9 +10,7 @@ const usePopularmovies = () => {
     const Apicall = await fetch(popularapiurl, Api_options);
 
     const data = await Apicall.json();
-    console.log("data", data?.results);
     dispatch(addPopularMovies(data?.results));
-    console.log("popularmovies", addPopularMovies);
   };
 
   useEffect(() => {

@@ -40,13 +40,12 @@ const Login = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        console.log("user data ", user);
+        
         
         // Auth state change is handled by onAuthStateChanged in App.jsx
         toast.success("Sign In Successful");
       })
       .catch((error) => {
-        console.log("Error in Google Sign Up", error);
         seterrormessage(error.message);
         toast.error(error.message)
       });

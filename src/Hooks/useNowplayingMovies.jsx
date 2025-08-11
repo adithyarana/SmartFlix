@@ -10,9 +10,8 @@ const useNowplayingMovies = () => {
     const Apicall = await fetch(apiurl, Api_options);
 
     const data = await Apicall.json();
-    console.log("data", data?.results);
     dispatch(addNowPlayingMovies(data?.results));
-    console.log("nowplayingmovies", addNowPlayingMovies);
+   
   };
 
   useEffect(() => {

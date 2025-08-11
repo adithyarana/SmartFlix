@@ -11,7 +11,7 @@ const useTopRated = () => {
     
     const Apicall = await fetch (topRatedmovies , Api_options)
     const data = await Apicall.json();
-    console.log("toprateddata", data?.results);
+    
     
     dispatch(addTopratedmovies(data?.results))
   }

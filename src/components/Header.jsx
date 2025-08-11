@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase.jsx";
 import { adduser, removeuser } from "../utils/Userslice.jsx";
@@ -11,7 +11,7 @@ const Header = () => {
  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log("Auth state changed:", user);
+      
       
       if (user) {
         const { uid, email, displayName, photoURL } = user;
@@ -34,12 +34,14 @@ const Header = () => {
   }, [dispatch]);
 
   return (
-    <div className="absolute top-0 left-0  ">
-      <img
+    <div className="absolute top-0 left-0  cursor-pointer ">
+  <Link to="">
+  <img
         className="w-40 h-30 ml-9 mb-10 object-contain"
         src="/logoo.png"
         alt="Smartflix logo"
       />
+  </Link>
     
     </div>
   );
