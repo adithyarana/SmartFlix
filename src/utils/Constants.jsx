@@ -4,6 +4,7 @@ export const apiurl ="https://api.themoviedb.org/3/movie/now_playing";
 export const popularapiurl = "https://api.themoviedb.org/3/movie/popular"
 export const vedioTrailerUrl = "https://api.themoviedb.org/3/movie/";
 export const posterurl ="https://image.tmdb.org/t/p/w500";
+export const topRatedmovies = "https://api.themoviedb.org/3/movie/top_rated";
 export const Api_options = {
     method: 'GET',
     headers: {

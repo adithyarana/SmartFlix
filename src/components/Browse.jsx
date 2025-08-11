@@ -5,10 +5,14 @@ import Maincontainer from "./Maincontainer";
 import Secondarycontainer from "./Secondarycontainer";
 import Header from "./Header";
 import usePopularmovies from "../Hooks/usePopularmovies";
+import useTopRated from "../Hooks/useTopRated";
 
 const Browse = () => {
+
+  // Api calls using custom hooks 
   useNowplayingMovies();
   usePopularmovies();
+  useTopRated();
 
   {
     /*
