@@ -7,9 +7,9 @@ const Maincontainer = () => {
   const movies = useSelector((state) => state.movies?.nowPlayingMovies);
 
   if (!movies) return null;
-  const Onemovie = movies[3];
+  const Onemovie = movies[0];
 
-  return (
+  return !movies ? <h1 className='text-white'>loading</h1> : (
     <div className="">
       <Vediobackground movieid={Onemovie} />
       <VedioTitle moviedata={Onemovie} />

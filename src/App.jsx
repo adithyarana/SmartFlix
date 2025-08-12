@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./components/Login";
 import Browse from "./components/Browse";
+import Moviedetails from "./pages/Moviedetails";
 
 const approuter = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const approuter = createBrowserRouter([
     path: "/browse",
     element: <Browse />,
   },
+   {
+    path:"/moviedetails/:movieId",
+    element:<Moviedetails/>
+   }
 ]);
 
 

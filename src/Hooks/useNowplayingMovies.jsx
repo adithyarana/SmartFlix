@@ -11,6 +11,7 @@ const useNowplayingMovies = () => {
 
     const data = await Apicall.json();
     dispatch(addNowPlayingMovies(data?.results));
+  
    
   };
 

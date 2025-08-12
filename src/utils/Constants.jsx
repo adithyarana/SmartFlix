@@ -5,6 +5,8 @@ export const popularapiurl = "https://api.themoviedb.org/3/movie/popular"
 export const vedioTrailerUrl = "https://api.themoviedb.org/3/movie/";
 export const posterurl ="https://image.tmdb.org/t/p/w500";
 export const topRatedmovies = "https://api.themoviedb.org/3/movie/top_rated";
+export const searchmoviesurl = "https://api.themoviedb.org/3/search/movie?query=";
+export const ApiKey = import.meta.env.VITE_API_KEY;
 export const Api_options = {
     method: 'GET',
     headers: {
@@ -12,3 +14,5 @@ export const Api_options = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOTdkYTA2Yzk2YWRhMDdlYzMzZTBmZmQ4MWQ2MGU4MSIsIm5iZiI6MTc1NDQ3ODQ5NC40MDQsInN1YiI6IjY4OTMzNzllNTBkYTgzNTkzYzk5MWE3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EwWE1KR86FY3dSzRAkKAhuuVtzJCfCb4EBi3J4Ku52Y'
     }
   };
+
+  

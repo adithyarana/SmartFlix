@@ -12,12 +12,17 @@ import { useSelector } from "react-redux";
 const Browse = () => {
   const aisearch = useSelector((store) => store.ai.showaisearch);
   console.log(aisearch);
+  
+
 
 
   // Api calls using custom hooks
   useNowplayingMovies();
   usePopularmovies();
   useTopRated();
+
+ 
+  
 
   {
     /*

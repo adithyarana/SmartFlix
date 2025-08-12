@@ -38,7 +38,7 @@ const Header2 = () => {
   }
 
   return (
-    <div className="flex items-center gap-3 justify-end mt-6  pr-5 pb-6">
+    <div className="flex items-center gap-3 justify-end mt-6  pr-5 ">
       {showaisearch && (
         <select
           onChange={handlelanguagechange}

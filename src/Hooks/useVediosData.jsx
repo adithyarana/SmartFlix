@@ -9,6 +9,8 @@ const useVediosData = (id) => {
         const Apicall = await fetch(vedioTrailerUrl + id + "/videos", Api_options);
         const VedioData = await Apicall.json();
         settrailerdata(VedioData?.results);
+        console.log("VedioData?.results",VedioData?.results);
+        
       };
     
       useEffect(() => {
