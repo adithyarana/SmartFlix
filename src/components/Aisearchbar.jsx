@@ -11,6 +11,7 @@ import { addAimoviesResult } from "../utils/Aislice";
 const Aisearchbar = () => {
   const languagechange = useSelector((lang) => lang.config.Language);
   // const [error , seterror]= useState("")
+  const [loading , setloading] = useState(false);
   const searchtext = useRef(null);
   const dispatch = useDispatch();
 
@@ -38,6 +39,7 @@ const Aisearchbar = () => {
     }
 
     try {
+      setloading(true);
       const promt =
         "Act as Movie Recommendation System and suggest some movies for the query" +
         searchtext.current.value +
@@ -46,6 +48,9 @@ const Aisearchbar = () => {
         model: "gemini-2.5-flash",
         contents: promt,
       });
+
+    
+
       console.log(response.text.split(","));
       toast.success("Fetched the Movies Data !");
 
@@ -54,9 +59,10 @@ const Aisearchbar = () => {
       const moviesdata = await Promise.all(AiMovies.map((movies)=>SearchMoviesTmdb(movies)))  // all the promises are resolved then only the result will come 
       console.log("moviesdata",moviesdata);
       dispatch(addAimoviesResult({ Moviesnames:AiMovies , MoviesResult:moviesdata})); // pushing in store
-
+      setloading(false);
     } catch (error) {
       toast.error("Error in ai search");
+      setloading(false);
     }
 
     // const searchtextvalue = searchtext.current.value;
@@ -88,8 +94,11 @@ const Aisearchbar = () => {
         >
           {lang[languagechange].search}
         </button>
-        {/* {error && <p className="text-red-600 text-wrap">{error}</p>} */}
+       
       </form>
+
+      {loading && <h1 className="text-red-600 text-2xl m-auto font-bold text-center">Loading...</h1>}
+ 
     
     </div>
   );

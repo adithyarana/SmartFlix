@@ -9,7 +9,7 @@ import {getAuth , GoogleAuthProvider} from "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDEVLKg86Lub2CwPIyaC1uWKn00_KoFm7M",
-  authDomain: "smartflix-five.vercel.app",
+  authDomain: "smartflix-39c7c.firebaseapp.com",
   projectId: "smartflix-39c7c",
   storageBucket: "smartflix-39c7c.firebasestorage.app",
   messagingSenderId: "70561328039",

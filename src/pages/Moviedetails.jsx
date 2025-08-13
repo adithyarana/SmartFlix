@@ -24,8 +24,8 @@ const Moviedetails = () => {
 
   if (!trailer) {
     return (
-      <h1 className="flex justify-center items-center ">
-        <span className="text-white text-2xl font-bold ">Loading...</span>
+      <h1 className="flex justify-center items-center h-screen ">
+        <span className="text-white text-2xl font-bold text-center">No Details Found!</span>
       </h1>
     );
   }
