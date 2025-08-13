@@ -31,7 +31,9 @@ Features
 ## 🚀 Screenshots
 
 ### 🏠 Home Page
+
  <img width="1864" height="838" alt="Screenshot 2025-08-13 211615" src="https://github.com/user-attachments/assets/3eb379af-4754-4e8a-995c-5a3f95930aaf" />
+ <img width="1902" height="860" alt="Screenshot 2025-08-13 211406" src="https://github.com/user-attachments/assets/f7a9f108-48f9-485b-b0a8-d1294c2a8295" />
 
 ### 🔍 AI Search Movies
 <img width="1913" height="827" alt="Screenshot 2025-08-13 211445" src="https://github.com/user-attachments/assets/e4ebd187-bce0-44fa-870a-4e851e9cab11" />
