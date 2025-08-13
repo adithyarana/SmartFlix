@@ -7,9 +7,14 @@ import MoviesDetails from "../components/MoviesDetails";
 const Moviedetails = () => {
 
   // how to get movies datails 
-    const movies = useSelector((state) => state?.movies?.nowPlayingMovies);
-
+    const movies = useSelector((state) => state?.movies);
+    const aimoviesdata = useSelector((state)=>state?.ai)
+   
     console.log("movies",movies);
+    console.log("aimoviesdata",aimoviesdata);
+  
+
+
 
   
   
@@ -45,7 +50,9 @@ const Moviedetails = () => {
     
     </div>
     <div className="mt-2.5">
-    <MoviesDetails moviedata={movies} movieid={movieId} />
+    <MoviesDetails moviedata={movies} aimoviesdata={aimoviesdata}  movieid={movieId} />
+   
+  
     </div>
   </>
   )
