@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import {getAuth , GoogleAuthProvider} from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -9,7 +8,7 @@ import {getAuth , GoogleAuthProvider} from "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDEVLKg86Lub2CwPIyaC1uWKn00_KoFm7M",
-  authDomain: "smartflix-39c7c.firebaseapp.com",
+  authDomain: "smartflixx.netlify.app",
   projectId: "smartflix-39c7c",
   storageBucket: "smartflix-39c7c.firebasestorage.app",
   messagingSenderId: "70561328039",
@@ -19,7 +18,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
